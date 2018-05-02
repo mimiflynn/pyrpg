@@ -9,6 +9,10 @@ Each game will be an instance of the game engine initialzed with a game object '
 
 Contains basic game elements:
 - player
+- player actions
+- frames
+- frame actions
+- movement
 - map
 - rooms
 - items
@@ -20,6 +24,6 @@ And user interface support elements
 - output
 
 
-### Game Catridge
+### Game Cartridge
 
-Defines the game.
+Defines the game and an options object.
