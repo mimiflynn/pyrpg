@@ -1,1 +1,1 @@
-from .core import prompt
+from .core import Rpg
