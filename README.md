@@ -27,3 +27,7 @@ And user interface support elements
 ### Game Cartridge
 
 Defines the game and an options object.
+
+```bazaar
+
+```
