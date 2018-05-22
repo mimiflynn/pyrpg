@@ -4,12 +4,10 @@ class Rpg:
         self.greeting = kwargs['greeting']
         self.frames = kwargs['frames']
         self.current_frame = 'entry'
+
+    def start(self):
         self.show_greeting()
         self.read_frame(self.current_frame)
-
-    def show_greeting(self):
-        print('You are now playing ' + self.name)
-        print(self.greeting)
 
     def read_frame(self, frame_name):
         self.prompt(self.frames[frame_name]['intro'])
@@ -25,6 +23,10 @@ class Rpg:
         else:
             self.current_frame = self.frames[self.current_frame]['moves'][response]
             return self.read_frame(self.current_frame)
+
+    def show_greeting(self):
+        print('You are now playing ' + self.name)
+        print(self.greeting)
 
     def prompt(self, question):
         print(self.parse_response(str(input(question))))

@@ -1,9 +1,13 @@
 import os
 import sys
+import unittest
+# https://docs.python.org/3/library/unittest.html
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from rpg import Rpg
 
-game = {
+
+hike = {
     'greeting': 'Welcome!',
     'name': 'Hiking the AT',
     'frames': {
@@ -26,28 +30,18 @@ game = {
                 'south': 'mountains',
                 'west': 'house'
             }
-        },
-        'house': {
-            'intro': 'You are in front of a house!',
-            'actions': {
-                'open_door': 'The door is locked',
-                'unlock_door': ''
-            },
-            'moves': {
-                'south': 'mountains',
-                'west': 'house'
-            }
-        },
-        'mountains': {
-            'intro': 'You are in the mountains',
-            'moves': {
-                'south': 'mountains',
-                'west': 'house'
-            }
         }
     }
 }
 
+
+class TestGameMethods(unittest.TestCase):
+    def setUp(self):
+        self.game = Rpg(**hike)
+
+    def test_init(self):
+        self.assertEqual(self.game.name, hike['name'])
+
+
 if __name__ == '__main__':
-    run = Rpg(**game)
-    run.start()
+    unittest.main()
