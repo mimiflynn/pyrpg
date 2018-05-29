@@ -32,54 +32,54 @@ game = {
                     'result': 'The door is locked'
                 }
             },
-            'moves': ''
-        },
-        'foothills': {
-            'intro':
-                '''The mountains are to the further to the south. A house is to the west. What direction do you want to go?
-                ''',
-            'actions': {
-                'open_door': {
-                    'result': 'The door is locked'
-                },
-                'unlock_door': {
-                    'required': 'key',
-                    'result': 'The door is locked'
-                }
-            },
             'moves': {
                 'south': 'mountains',
-                'west': 'house'
+                'north': 'house'
             }
         },
         'house': {
             'intro': 'You are in front of a house! Where would you like to go?',
             'actions': {
-                'open_door': {
-                    'result': 'The door is locked'
-                },
                 'unlock_door': {
-                    'result': 'The door is locked'
+                    'frame': 'inside_house',
+                    'required': 'key',
+                    'result': 'You have unlocked the door!'
                 }
             },
             'moves': {
                 'south': 'mountains',
-                'west': 'house'
+                'north': 'house'
             }
         },
-        'mountains': {
-            'intro': 'You are in the mountains',
+        'inside_house': {
+            'intro': 'You are inside the house!',
             'actions': {
-                'open_door': {
-                    'result': 'The door is locked'
-                },
-                'unlock_door': {
-                    'result': 'The door is locked'
+                'celebrate': {
+                    'result': 'YAY its amazing!'
+                }
+            },
+            'moves': {}
+        },
+        'mountains': {
+            'intro': 'You are in the mountains. There is a key at your feet.',
+            'actions': {
+                'pick_up_key': {
+                    'frame': 'mountains_no_key',
+                    'item': 'key',
+                    'result': 'You have the key!'
                 }
             },
             'moves': {
-                'south': 'mountains',
-                'west': 'house'
+                'south': 'dead_end',
+                'north': 'house'
+            }
+        },
+        'mountains_no_key': {
+            'intro': 'You are in the mountains.',
+            'actions': {},
+            'moves': {
+                'south': 'dead_end',
+                'north': 'house'
             }
         }
     }
