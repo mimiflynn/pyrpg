@@ -42,8 +42,12 @@ game = {
         'house': {
             'intro': 'You are in front of a house! Where would you like to go?',
             'actions': {
-                'open_door': 'The door is locked',
-                'unlock_door': ''
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'result': 'The door is locked'
+                }
             },
             'moves': {
                 'south': 'mountains',
