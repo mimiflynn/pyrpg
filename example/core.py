@@ -10,8 +10,12 @@ game = {
         'entry': {
             'intro': 'A stream is to the north and mountains are on the horizon. What direction do you want to go? ',
             'actions': {
-                'open_door': 'The door is locked',
-                'unlock_door': ''
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'result': 'The door is locked'
+                }
             },
             'moves': {
                 'south': 'foothills',
@@ -21,8 +25,12 @@ game = {
         'dead_end': {
             'intro': 'You have reached a dead end',
             'actions': {
-                'open_door': 'The door is locked',
-                'unlock_door': ''
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'result': 'The door is locked'
+                }
             },
             'moves': ''
         },
@@ -31,8 +39,13 @@ game = {
                 '''The mountains are to the further to the south. A house is to the west. What direction do you want to go?
                 ''',
             'actions': {
-                'open_door': 'The door is locked',
-                'unlock_door': ''
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'required': 'key',
+                    'result': 'The door is locked'
+                }
             },
             'moves': {
                 'south': 'mountains',
@@ -57,8 +70,12 @@ game = {
         'mountains': {
             'intro': 'You are in the mountains',
             'actions': {
-                'open_door': 'The door is locked',
-                'unlock_door': ''
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'result': 'The door is locked'
+                }
             },
             'moves': {
                 'south': 'mountains',

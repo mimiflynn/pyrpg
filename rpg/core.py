@@ -11,7 +11,7 @@ class Rpg:
         self.frames = kwargs['frames']
 
         self.current_frame = 'house'
-        self.inventory = {}
+        self.inventory = []
 
     def start(self):
         self.show_greeting()
@@ -21,11 +21,13 @@ class Rpg:
         self.prompt(self.frames[frame_name]['intro'])
 
     def do_action(self, action_name):
+        if 'item' in self.frames[self.current_frame]['actions'][action_name]:
+            self.add_inventory(self.frames[self.current_frame]['actions'][action_name]['item'])
         print(self.frames[self.current_frame]['actions'][action_name]['result'])
         self.read_frame(self.current_frame)
 
-    def add_inventory(self):
-        self.inventory = {}
+    def add_inventory(self, item):
+        self.inventory.append(item)
 
     def get_movement_options(self):
         return [*self.frames[self.current_frame]['moves']] + [*self.frames[self.current_frame]['actions']]
