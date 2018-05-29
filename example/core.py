@@ -55,6 +55,7 @@ game = {
             'intro': 'You are inside the house!',
             'actions': {
                 'celebrate': {
+                    'frame': 'end',
                     'result': 'YAY its amazing!'
                 }
             },
@@ -81,6 +82,9 @@ game = {
                 'south': 'dead_end',
                 'north': 'house'
             }
+        },
+        'end': {
+            'end': True
         }
     }
 }
