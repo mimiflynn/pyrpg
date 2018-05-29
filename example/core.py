@@ -9,6 +9,10 @@ game = {
     'frames': {
         'entry': {
             'intro': 'A stream is to the north and mountains are on the horizon. What direction do you want to go? ',
+            'actions': {
+                'open_door': 'The door is locked',
+                'unlock_door': ''
+            },
             'moves': {
                 'south': 'foothills',
                 'north': 'dead_end'
@@ -16,19 +20,27 @@ game = {
         },
         'dead_end': {
             'intro': 'You have reached a dead end',
-            'moves': '',
+            'actions': {
+                'open_door': 'The door is locked',
+                'unlock_door': ''
+            },
+            'moves': ''
         },
         'foothills': {
             'intro':
                 '''The mountains are to the further to the south. A house is to the west. What direction do you want to go?
                 ''',
+            'actions': {
+                'open_door': 'The door is locked',
+                'unlock_door': ''
+            },
             'moves': {
                 'south': 'mountains',
                 'west': 'house'
             }
         },
         'house': {
-            'intro': 'You are in front of a house!',
+            'intro': 'You are in front of a house! Where would you like to go?',
             'actions': {
                 'open_door': 'The door is locked',
                 'unlock_door': ''
@@ -40,6 +52,10 @@ game = {
         },
         'mountains': {
             'intro': 'You are in the mountains',
+            'actions': {
+                'open_door': 'The door is locked',
+                'unlock_door': ''
+            },
             'moves': {
                 'south': 'mountains',
                 'west': 'house'
