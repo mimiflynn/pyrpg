@@ -28,6 +28,33 @@ And user interface support elements
 
 Defines the game and an options object.
 
+#### Game Object
+
+`greeting` - string
+
+`name` - string
+
+`frames` - collection of frame objects
+
+#### Frame Object
+
+`intro` - string
+
+`actions` - collection of action objects
+
+`moves` - collection of move objects
+
+`end` - boolean - indicates that this frame is the end of the game
+
+#### Action Object
+
+`result` - string - success message
+
+`required` - string - item name - item required to be in user inventory to fulfill action. If the user does not have this item, a message will be displayed.
+
+`frame` - string - frame name - destination that a successful action will advance to
+
+#### Example Game
 ```
 game = {
     'greeting': 'Welcome!',
@@ -35,6 +62,14 @@ game = {
     'frames': {
         'entry': {
             'intro': 'A stream is to the north and mountains are on the horizon. What direction do you want to go? ',
+            'actions': {
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'result': 'The door is locked'
+                }
+            },
             'moves': {
                 'south': 'foothills',
                 'north': 'dead_end'
@@ -42,16 +77,67 @@ game = {
         },
         'dead_end': {
             'intro': 'You have reached a dead end',
-            'moves': '',
-        },
-        'foothills': {
-            'intro':
-                '''The mountains are to the further to the south. A house is to the west. What direction do you want to go?
-                ''',
+            'actions': {
+                'open_door': {
+                    'result': 'The door is locked'
+                },
+                'unlock_door': {
+                    'result': 'The door is locked'
+                }
+            },
             'moves': {
                 'south': 'mountains',
-                'west': 'house'
+                'north': 'house'
             }
+        },
+        'house': {
+            'intro': 'You are in front of a house! Where would you like to go?',
+            'actions': {
+                'unlock_door': {
+                    'frame': 'inside_house',
+                    'required': 'key',
+                    'result': 'You have unlocked the door!'
+                }
+            },
+            'moves': {
+                'south': 'mountains',
+                'north': 'house'
+            }
+        },
+        'inside_house': {
+            'intro': 'You are inside the house!',
+            'actions': {
+                'celebrate': {
+                    'frame': 'end',
+                    'result': 'YAY its amazing!'
+                }
+            },
+            'moves': {}
+        },
+        'mountains': {
+            'intro': 'You are in the mountains. There is a key at your feet.',
+            'actions': {
+                'pick_up_key': {
+                    'frame': 'mountains_no_key',
+                    'item': 'key',
+                    'result': 'You have the key!'
+                }
+            },
+            'moves': {
+                'south': 'dead_end',
+                'north': 'house'
+            }
+        },
+        'mountains_no_key': {
+            'intro': 'You are in the mountains.',
+            'actions': {},
+            'moves': {
+                'south': 'dead_end',
+                'north': 'house'
+            }
+        },
+        'end': {
+            'end': True
         }
     }
 }
