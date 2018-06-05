@@ -4,9 +4,10 @@ class Rpg:
     def __init__(self, **kwargs):
         """
         :param kwargs:
-            name
-            greeting
-            frames
+            name - string - name of game
+            greeting - string - game greeting
+            frames - string - game frames
+            output - function - will output text - defaults to Cli package
         """
         self.name = kwargs['name']
         self.greeting = kwargs['greeting']

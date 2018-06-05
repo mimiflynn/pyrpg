@@ -5,8 +5,19 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from rpg import Rpg
 
 
+def greeting():
+    return '''
+         _   _ _ _    _               _   _             ___ _____ 
+        | | | (_) |  (_)             | | | |           / _ \_   _|
+        | |_| |_| | ___ _ __   __ _  | |_| |__   ___  / /_\ \| |  
+        |  _  | | |/ / | '_ \ / _` | | __| '_ \ / _ \ |  _  || |  
+        | | | | |   <| | | | | (_| | | |_| | | |  __/ | | | || |  
+        \_| |_/_|_|\_\_|_| |_|\__, |  \__|_| |_|\___| \_| |_/\_/  
+                               __/ |                              
+                              |___/                               '''
+
 game = {
-    'greeting': 'Welcome!',
+    'greeting': greeting(),
     'name': 'Hiking the AT',
     'frames': {
         'entry': {
