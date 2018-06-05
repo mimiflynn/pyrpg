@@ -1,3 +1,5 @@
+from rpg.cli import Cli
+
 class Rpg:
     def __init__(self, **kwargs):
         """
@@ -9,8 +11,9 @@ class Rpg:
         self.name = kwargs['name']
         self.greeting = kwargs['greeting']
         self.frames = kwargs['frames']
+        self.output = kwargs.get('output', Cli)
 
-        self.current_frame = 'inside_house'
+        self.current_frame = 'entry'
         self.inventory = []
 
     def start(self):
@@ -20,7 +23,7 @@ class Rpg:
     def read_frame(self):
         frame = self.get_frame()
         if 'end' in frame:
-            print('Game Over')
+            self.output('Game Over')
             exit()
         else:
             self.prompt(self.get_frame()['intro'])
@@ -37,7 +40,7 @@ class Rpg:
 
     def get_movement_options(self):
         frame = self.get_frame()
-        return [*frame['moves']] + [*frame['actions']]
+        return [*frame.get('moves', {})] + [*frame.get('actions', {})]
 
     def show_hint(self):
         return 'These are your movement options: ' + str(self.get_movement_options())
@@ -58,32 +61,30 @@ class Rpg:
         if 'item' in action:
             self.add_inventory(action['item'])
             self.current_frame = action['frame']
-            print(' ')
-            print('You have added ' + action['item'] + ' to your inventory!')
-            print(str(self.inventory))
-            print(' ')
-            print(action['result'])
+            self.output(' ')
+            self.output('You have added ' + action['item'] + ' to your inventory!')
+            self.output(str(self.inventory))
         if 'required' in action:
             if self.inventory.count(action['required']):
                 self.current_frame = action['frame']
-                print(' ')
-                print(action['result'])
+                self.output(' ')
+                self.output(action['result'])
             else:
-                print(' ')
-                print('You need the ' + action['required'] + ' to do this action!')
+                self.output(' ')
+                self.output('You need the ' + action['required'] + ' to do this action!')
         else:
             if 'frame' in action:
                 self.current_frame = action['frame']
-            print(' ')
-            print(action['result'])
+            self.output(' ')
+            self.output(action['result'])
         self.read_frame()
 
     def show_greeting(self):
-        print('You are now playing ' + self.name)
-        print(self.greeting)
+        self.output('You are now playing ' + self.name)
+        self.output(self.greeting)
 
     def prompt(self, question):
-        print(' ')
-        print(question)
-        print(str(self.get_movement_options()))
-        print(self.parse_response(str(input(''))))
+        self.output(' ')
+        self.output(question)
+        self.output(str(self.get_movement_options()))
+        self.output(self.parse_response(str(input(''))))

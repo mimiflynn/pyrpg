@@ -1,1 +1,1 @@
-from .core import Rpg
+from rpg.engine.core import Rpg

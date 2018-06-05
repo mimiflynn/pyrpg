@@ -1,4 +1,9 @@
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from rpg import Rpg
+
 
 game = {
     'greeting': 'Welcome!',
@@ -15,8 +20,8 @@ game = {
                 }
             },
             'moves': {
-                'south': 'foothills',
-                'north': 'dead_end'
+                'south': 'mountains',
+                'north': 'house'
             }
         },
         'dead_end': {
@@ -74,7 +79,6 @@ game = {
         },
         'mountains_no_key': {
             'intro': 'You are in the mountains.',
-            'actions': {},
             'moves': {
                 'south': 'dead_end',
                 'north': 'house'
@@ -86,6 +90,5 @@ game = {
     }
 }
 
-if __name__ == '__main__':
-    run = Rpg(**game)
-    run.start()
+run = Rpg(**game)
+run.start()
