@@ -1,20 +1,23 @@
 from rpg.cli import Cli
 
+
 class Rpg:
     def __init__(self, **kwargs):
         """
         :param kwargs:
             name - string - name of game
-            greeting - string - game greeting
+            greeting - string - game greeting - defaults to nothing
+            entry - string - keyname for the starting game frame - defaults to 'entry'
             frames - string - game frames
             output - function - will output text - defaults to Cli package
         """
         self.name = kwargs['name']
-        self.greeting = kwargs['greeting']
+        self.greeting = kwargs.get('greeting', '')
+        self.entry_frame = kwargs.get('entry', 'entry')
         self.frames = kwargs['frames']
         self.output = kwargs.get('output', Cli)
 
-        self.current_frame = 'entry'
+        self.current_frame = self.entry_frame
         self.inventory = []
 
     def start(self):
@@ -24,6 +27,7 @@ class Rpg:
     def read_frame(self):
         frame = self.get_frame()
         if 'end' in frame:
+            self.output(frame.get('intro', ''))
             self.output('Game Over')
             exit()
         else:

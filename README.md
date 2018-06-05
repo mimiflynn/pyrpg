@@ -1,4 +1,4 @@
-# python-console-game
+# pyrpg
 Python port of console-game rpg engine
 
 ## Components
@@ -141,6 +141,22 @@ game = {
         }
     }
 }
+```
+
+Then run the game like this:
+
+```
+from rpg import Rpg
+
+run_game = Rpg(game)
+run_game.start()
+```
+
+### Example Game
+From project root:
+
+```
+python3 example/at.py
 ```
 
 
