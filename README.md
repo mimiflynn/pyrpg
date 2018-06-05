@@ -7,6 +7,15 @@ Each game will be an instance of the game engine initialzed with a game object '
 
 ### Game Engine
 
+Create a new game:
+
+```
+from rpg import Rpg
+
+run_game = Rpg(game)
+run_game.start()
+```
+
 Contains basic game elements:
 - player
 - player actions
@@ -143,15 +152,6 @@ game = {
 }
 ```
 
-Then run the game like this:
-
-```
-from rpg import Rpg
-
-run_game = Rpg(game)
-run_game.start()
-```
-
 ### Example Game
 From project root:
 
@@ -169,4 +169,10 @@ python -m unittest
 
 ### References
 
-(Python Unit Testing – Structuring Your Project)[http://www.patricksoftwareblog.com/python-unit-testing-structuring-your-project/]
+[Python Unit Testing – Structuring Your Project](http://www.patricksoftwareblog.com/python-unit-testing-structuring-your-project/)
+
+[Text to ASCII Art Generator](http://patorjk.com/software/taag/)
+
+[Modules and Packages](https://www.learnpython.org/en/Modules_and_Packages)
+
+[setup.py](https://github.com/kennethreitz/setup.py)
