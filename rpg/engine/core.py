@@ -2,20 +2,21 @@ from rpg.cli import Cli
 
 
 class Rpg:
-    def __init__(self, **kwargs):
+    def __init__(self, output=Cli, **kwargs):
         """
+        :param output:
+            function - optional - will output text - defaults to Cli package
         :param kwargs:
             name - string - name of game
             greeting - string - game greeting - defaults to nothing
             entry - string - keyname for the starting game frame - defaults to 'entry'
             frames - string - game frames
-            output - function - will output text - defaults to Cli package
         """
         self.name = kwargs['name']
         self.greeting = kwargs.get('greeting', '')
         self.entry_frame = kwargs.get('entry', 'entry')
         self.frames = kwargs['frames']
-        self.output = kwargs.get('output', Cli)
+        self.output = output
 
         self.current_frame = self.entry_frame
         self.inventory = []

@@ -37,8 +37,16 @@ class TestGameMethods(unittest.TestCase):
     def setUp(self):
         self.game = Rpg(**hike)
 
-    def test_init(self):
+    def test_init_greeting(self):
+        self.assertEqual(self.game.greeting, hike['greeting'])
+
+    def test_init_frames(self):
+        self.assertEqual(self.game.frames, hike['frames'])
+
+    def test_init_name(self):
         self.assertEqual(self.game.name, hike['name'])
+
+
 
 
 if __name__ == '__main__':
