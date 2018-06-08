@@ -12,26 +12,9 @@ Create a new game:
 ```
 from rpg import Rpg
 
-run_game = Rpg(game)
+run_game = Rpg(**game)
 run_game.start()
 ```
-
-Contains basic game elements:
-- player
-- player actions
-- frames
-- frame actions
-- movement
-- map
-- rooms
-- items
-
-And user interface support elements
-- inventory
-- help
-- input
-- output
-
 
 ### Game Cartridge
 
@@ -164,6 +147,12 @@ python3 example/at.py
 
 ```
 python -m unittest
+```
+
+### Documentation with `pydoc`
+
+```
+pydoc rpg
 ```
 
 

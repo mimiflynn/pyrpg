@@ -46,7 +46,7 @@ class Rpg:
 
     def get_movement_options(self):
         frame = self.get_frame()
-        return [*frame.get('moves', {})] + [*frame.get('actions', {})]
+        return list(frame.get('moves', {}).keys()) + list(frame.get('actions', {}).keys())
 
     def show_hint(self):
         return 'These are your movement options: ' + str(self.get_movement_options())
