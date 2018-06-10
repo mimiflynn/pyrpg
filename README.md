@@ -152,7 +152,7 @@ python -m unittest
 ### Documentation with `pydoc`
 
 ```
-pydoc rpg
+pydoc3 rpg
 ```
 
 

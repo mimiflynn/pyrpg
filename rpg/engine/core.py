@@ -2,8 +2,13 @@ from rpg.cli import Cli
 
 
 class Rpg:
+    """
+    Game engine encapsulated
+    """
     def __init__(self, output=Cli, **kwargs):
         """
+        Construct the new game
+
         :param output:
             function - optional - will output text - defaults to Cli package
         :param kwargs:
@@ -11,6 +16,7 @@ class Rpg:
             greeting - string - game greeting - defaults to nothing
             entry - string - keyname for the starting game frame - defaults to 'entry'
             frames - string - game frames
+        :return: None
         """
         self.name = kwargs['name']
         self.greeting = kwargs.get('greeting', '')
@@ -22,10 +28,20 @@ class Rpg:
         self.inventory = []
 
     def start(self):
+        """
+        Kick off game play
+
+        :return: None
+        """
         self.show_greeting()
         self.read_frame()
 
     def read_frame(self):
+        """
+        Read the current frame
+
+        :return: None
+        """
         frame = self.get_frame()
         if 'end' in frame:
             self.output(frame.get('intro', ''))
@@ -46,12 +62,17 @@ class Rpg:
 
     def get_movement_options(self):
         frame = self.get_frame()
-        return list(frame.get('moves', {}).keys()) + list(frame.get('actions', {}).keys())
+        return [*frame.get('moves', {})] + [*frame.get('actions', {})]
 
     def show_hint(self):
         return 'These are your movement options: ' + str(self.get_movement_options())
 
     def parse_response(self, response):
+        """
+
+        :param response:
+        :return:
+        """
         frame = self.get_frame()
         if response == 'hint' or response == 'help':
             return self.prompt(self.show_hint())
