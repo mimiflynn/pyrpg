@@ -4,6 +4,49 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from rpyg import Rpyg
 
+# ascii art from https://www.asciiart.eu/nature/mountains
+
+
+def house():
+    return '''
+                                /\                                          
+                              /\  //\\                                      
+                       /\    //\\///\\\        /\                           
+                      //\\  ///\////\\\\  /\  //\\                          
+         /\          /  ^ \/^ ^/^  ^  ^ \/^ \/  ^ \                         
+        / ^\    /\  / ^   /  ^/ ^ ^ ^   ^\ ^/  ^^  \                        
+       /^   \  / ^\/ ^ ^   ^ / ^  ^    ^  \/ ^   ^  \       *               
+      /  ^ ^ \/^  ^\ ^ ^ ^   ^  ^   ^   ____  ^   ^  \     /|\              
+     / ^ ^  ^ \ ^  _\___________________|  |_____^ ^  \   /||o\             
+    / ^^  ^ ^ ^\  /______________________________\ ^ ^ \ /|o|||\            
+   /  ^  ^^ ^ ^  /________________________________\  ^  /|||||o|\           
+  /^ ^  ^ ^^  ^    ||___|___||||||||||||___|__|||      /||o||||||\       |  
+ / ^   ^   ^    ^  ||___|___||||||||||||___|__|||          | |           |  
+/ ^ ^ ^  ^  ^  ^   ||||||||||||||||||||||||||||||oooooooooo| |ooooooo  |    
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo                   
+
+You are in front of a house! Where would you like to go?                    '''
+
+
+def mountains():
+    return '''
+    .                  .-.    .  _   *     _   .                    
+           *          /   \     ((       _/ \       *    .          
+         _    .   .--'\/\_ \     `      /    \  *    ___            
+     *  / \_    _/ ^      \/\'__        /\/\  /\  __/   \ *         
+       /    \  /    .'   _/  /  \  *' /    \/  \/ .`'\_/\   .       
+  .   /\/\  /\/ :' __  ^/  ^/    `--./.'  ^  `-.\ _    _:\ _        
+     /    \/  \  _/  \-' __/.' ^ _   \_   .'\   _/ \ .  __/ \       
+   /\  .-   `. \/     \ / -.   _/ \ -. `_/   \ /    `._/  ^  \      
+  /  `-.__ ^   / .-'.--'    . /    `--./ .-'  `-.  `-. `.  -  `.    
+@/        `.  / /      `-.   /  .-'   / .   .'   \    \  \  .-  \%  
+@&8jgs@@%% @)&@&(88&@.-_=_-=_-=_-=_-=_.8@% &@&&8(8%@%8)(8@%8 8%@)%  
+@88:::&(&8&&8:::::%&`.~-_~~-~~_~-~_~-~~=.'@(&%::::%@8&8)::&#@8::::  
+`::::::8%@@%:::::@%&8:`.=~~-.~~-.~~=..~'8::::::::&@8:::::&8:::::'   
+ `::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.'    
+
+You are in the mountains. There is a key at your feet.              '''
+
 
 def greeting():
     return '''
@@ -64,7 +107,7 @@ game = {
             }
         },
         'house': {
-            'intro': 'You are in front of a house! Where would you like to go?',
+            'intro': house(),
             'actions': {
                 'unlock_door': {
                     'frame': 'inside_house',
@@ -88,7 +131,7 @@ game = {
             'moves': {}
         },
         'mountains': {
-            'intro': 'You are in the mountains. There is a key at your feet.',
+            'intro': mountains(),
             'actions': {
                 'pick_up_key': {
                     'frame': 'mountains_no_key',
