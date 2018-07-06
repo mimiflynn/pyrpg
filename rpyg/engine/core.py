@@ -83,6 +83,7 @@ class Rpyg:
             else:
                 return self.do_action(response)
         else:
+            self.output(' ')
             self.output('Dunno what you mean by that, do you need help?')
             return self.prompt(self.show_hint())
 
@@ -110,11 +111,12 @@ class Rpyg:
         self.read_frame()
 
     def show_greeting(self):
+        self.output(' ------------------------ ')
         self.output('You are now playing ' + self.name)
         self.output(self.greeting)
+        self.output(' ------------------------ ')
 
     def prompt(self, question):
         self.output(' ')
         self.output(question)
-        # self.output(str(self.get_movement_options()))
-        self.output(self.parse_response(str(input(''))))
+        self.output(self.parse_response(str(input('=> '))))
