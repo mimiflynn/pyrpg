@@ -26,14 +26,8 @@ def horizon():
 ::::...:::;;:::::;;;;;;;;;;;;;;:::::;;::{:::::::;;;:..  .:;:... ::;;::::..      
 ;;;;:::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;];;;;;;;;;;::::::;;;;:.::;;;;;;;;:..   
 ;;;;;;;;;;;;;;ii;;;;;;;;;;;;;;;;;;;;;;;;[;;;;;;;;;;;;;;;;;;;;;;:;;;;;;;;;;;;;   
-;;;;;;;;;;;;;;;;;;;iiiiiiii;;;;;;;;;;;;;;};;ii;;iiii;;;;i;;;;;;;;;;;;;;;ii;;;   
-iiii;;;iiiiiiiiiiIIIIIIIIIIIiiiiiIiiiiii{iiIIiiiiiiiiiiiiiiii;;;;;iiiilliiiii   
-IIIiiIIllllllIIlllIIIIlllIIIlIiiIIIIIIIIIIIIlIIIIIllIIIIIIIIiiiiiiiillIIIllII   
-IIIiiilIIIIIIIllTIIIIllIIlIlIIITTTTlIlIlIIIlIITTTTTTTIIIIlIIllIlIlllIIIIIIITT   
-IIIIilIIIIITTTTTTTIIIIIIIIIIIIITTTTTIIIIIIIIITTTTTTTTTTIIIIIIIIIlIIIIIIIITTTT   
-IIIIIIIIITTTTTTTTTTTTTIIIIIIIITTTTTTTTIIIIIITTTTTTTTTTTTTTIIIIIIIIIIIIIITTTTT   
 
-You are in the desert.
+You are in the desert and are in need of shelter.
 A stream winds north and mountains are visible on the southern horizon.
 What direction do you want to go? '''
 
@@ -79,16 +73,24 @@ def mountains():
 You are in the mountains. There is a key at your feet.              '''
 
 
-def greeting():
+def desert():
     return '''
-         _   _ _ _    _               _   _             ___ _____ 
-        | | | (_) |  (_)             | | | |           / _ \_   _|
-        | |_| |_| | ___ _ __   __ _  | |_| |__   ___  / /_\ \| |  
-        |  _  | | |/ / | '_ \ / _` | | __| '_ \ / _ \ |  _  || |  
-        | | | | |   <| | | | | (_| | | |_| | | |  __/ | | | || |  
-        \_| |_/_|_|\_\_|_| |_|\__, |  \__|_| |_|\___| \_| |_/\_/  
-                               __/ |                              
-                              |___/                               '''
+           ,                        '           .        '        ,     
+   .            .        '       .         ,                            
+                                                   .       '     +      
+       +          .```````.                                             
+                .'         `.   +     .     ________||                  
+       ___     :             :     |       /        ||  .     '___      
+  ____/   \   :               :   ||.    _/      || ||\_______/   \     
+ /         \  :      _/|      :   `|| __/      ,.|| ||             \    
+/  ,   '  . \  :   =/_/      :     |'_______     || ||  ||   .      \   
+    |        \__`._/ |     .'   ___|        \__   \\||  ||...    ,   \  
+   l|,   '   (   /  ,|...-'        \   '   ,     __\||_//___            
+ ___|____     \_/^\/||__    ,    .  ,__             ||//    \    .  ,   
+           _/~  `""~`"` \_           ''(       ....,||/       '         
+ ..,...  __/  -'/  `-._ `\_\__        | \           ||  _______   .     
+                '`  `\   \  \-.\        /(_1_,..      || /                
+                                            ______/""""                 '''
 
 
 def win():
@@ -104,8 +106,8 @@ def win():
 
 
 game = {
-    'greeting': greeting(),
-    'name': 'Hiking the AT',
+    'greeting': desert(),
+    'name': 'Hiking the CDT',
     'frames': {
         'entry': {
             'intro': horizon(),
