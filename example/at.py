@@ -28,13 +28,13 @@ def horizon():
 ;;;;;;;;;;;;;;ii;;;;;;;;;;;;;;;;;;;;;;;;[;;;;;;;;;;;;;;;;;;;;;;:;;;;;;;;;;;;;   
 
 You are in the desert and are in need of shelter.
-A stream winds north and mountains are visible on the southern horizon.
+A stream winds [north] and mountains are visible to the [south].
 What direction do you want to go? '''
 
 
 def house():
     return '''
-                                /\                                          
+                                   /\                                          
                               /\  //\\                                      
                        /\    //\\///\\\        /\                           
                       //\\  ///\////\\\\  /\  //\\                          
@@ -45,9 +45,9 @@ def house():
      / ^ ^  ^ \ ^  _\___________________|  |_____^ ^  \   /||o\             
     / ^^  ^ ^ ^\  /______________________________\ ^ ^ \ /|o|||\            
    /  ^  ^^ ^ ^  /________________________________\  ^  /|||||o|\           
-  /^ ^  ^ ^^  ^    ||___|___||||||||||||___|__|||      /||o||||||\       |  
- / ^   ^   ^    ^  ||___|___||||||||||||___|__|||          | |           |  
-/ ^ ^ ^  ^  ^  ^   ||||||||||||||||||||||||||||||oooooooooo| |ooooooo  |    
+  /^ ^  ^ ^^  ^    ||___|___||||||||||||___|__|||      /||o||||||\          
+ / ^   ^   ^    ^  ||___|___||||||||||||___|__|||          | |              
+/ ^ ^ ^  ^  ^  ^   ||||||||||||||||||||||||||||||oooooooooo| |ooooooo       
 ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo                   
 
 You are in front of a house! Where would you like to go?                    '''

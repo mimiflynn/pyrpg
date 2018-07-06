@@ -94,7 +94,7 @@ class Rpyg:
             self.add_inventory(action['item'])
             self.current_frame = action['frame']
             self.output(' ')
-            self.output('You have added ' + action['item'] + ' to your inventory!')
+            self.output('You have added [' + action['item'] + '] to your inventory!')
             self.output(str(self.inventory))
         if 'required' in action:
             if self.inventory.count(action['required']):
@@ -103,7 +103,13 @@ class Rpyg:
                 self.output(action['result'])
             else:
                 self.output(' ')
-                self.output('You need the ' + action['required'] + ' to do this action!')
+                self.output('------------------------ ')
+                self.output('Oh no! You are unable to ' + action_name + '.')
+                self.output(' ')
+                self.output('You need the [' + action['required'] + '] to ' + action_name + '!')
+                self.output(' ')
+                self.output('Find the [' + action['required'] + ']!')
+                self.output('------------------------ ')
         else:
             if 'frame' in action:
                 self.current_frame = action['frame']
