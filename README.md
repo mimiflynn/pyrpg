@@ -12,7 +12,7 @@ Create a new game:
 ```
 from rpyg import Rpyg
 
-run_game = Rpg(**game)
+run_game = Rpyg(**game)
 run_game.start()
 ```
 
@@ -142,13 +142,6 @@ From project root:
 python3 example/at.py
 ```
 
-### Virtualenv
-
-```
-
-```
-
-
 ### Tests
 
 ```
@@ -158,7 +151,7 @@ python -m unittest
 ### Documentation with `pydoc`
 
 ```
-pydoc3 rpg
+pydoc3 rpyg
 ```
 
 
