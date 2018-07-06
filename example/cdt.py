@@ -107,7 +107,7 @@ def win():
 
 game = {
     'greeting': desert(),
-    'name': 'Hiking the CDT',
+    'name': 'Hiking the Continental Divide Trail!',
     'frames': {
         'entry': {
             'intro': horizon(),

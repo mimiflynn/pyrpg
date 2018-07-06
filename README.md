@@ -139,7 +139,7 @@ game = {
 From project root:
 
 ```
-python3 example/at.py
+python3 example/cdt.py
 ```
 
 ### Tests
