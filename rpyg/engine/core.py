@@ -1,11 +1,11 @@
-from rpyg.cli import Cli
+from rpyg.cli import output, ui
 
 
 class Rpyg:
     """
     Game engine encapsulated
     """
-    def __init__(self, output=Cli, **kwargs):
+    def __init__(self, output=output, ui=ui, **kwargs):
         """
         Construct the new game
 
@@ -22,6 +22,7 @@ class Rpyg:
         self.greeting = kwargs.get('greeting', '')
         self.entry_frame = kwargs.get('entry', 'entry')
         self.frames = kwargs['frames']
+        self.ui = ui
         self.output = output
 
         self.current_frame = self.entry_frame
@@ -84,7 +85,7 @@ class Rpyg:
                 return self.do_action(response)
         else:
             self.output(' ')
-            self.output('Dunno what you mean by that, do you need help?')
+            self.output('Dunno what you mean by "' + response + '", do you need help?')
             return self.prompt(self.show_hint())
 
     def do_action(self, action_name):
@@ -119,4 +120,4 @@ class Rpyg:
     def prompt(self, question):
         self.output(' ')
         self.output(question)
-        self.output(self.parse_response(str(input('=> '))))
+        self.output(self.parse_response(str(self.ui())))

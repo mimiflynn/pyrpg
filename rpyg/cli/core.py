@@ -1,3 +1,6 @@
-class Cli:
-    def __init__(self, text):
-        print(text)
+def output(text):
+    print(text)
+
+
+def ui():
+    return input('=> ')
