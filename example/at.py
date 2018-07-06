@@ -7,6 +7,37 @@ from rpyg import Rpyg
 # ascii art from https://www.asciiart.eu/nature/mountains
 
 
+def horizon():
+    return '''
+                      _                                                         
+                     /#\                                                        
+                    /###\     /\                                                
+                   /  ###\   /##\  /\                                           
+                  /      #\ /####\/##\                                          
+                 /  /      /   # /  ##\             _       /\                  
+               // //  /\  /    _/  /  #\ _         /#\    _/##\    /\           
+              // /   /  \     /   /    #\ \      _/###\_ /   ##\__/ _\          
+             /  \   / .. \   / /   _   { \ \   _/       / //    /    \\         
+     /\     /    /\  ...  \_/   / / \   } \ | /  /\  \ /  _    /  /    \ /\     
+  _ /  \  /// / .\  ..%:.  /... /\ . \ {:  \\   /. \     / \  /   ___   /  \    
+ /.\ .\.\// \/... \.::::..... _/..\ ..\:|:. .  / .. \\  /.. \    /...\ /  \ \   
+/...\.../..:.\. ..:::::::..:..... . ...\{:... / %... \\/..%. \  /./:..\__   \   
+ .:..\:..:::....:::;;;;;;::::::::.:::::.\}.....::%.:. \ .:::. \/.%:::.:..\      
+::::...:::;;:::::;;;;;;;;;;;;;;:::::;;::{:::::::;;;:..  .:;:... ::;;::::..      
+;;;;:::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;];;;;;;;;;;::::::;;;;:.::;;;;;;;;:..   
+;;;;;;;;;;;;;;ii;;;;;;;;;;;;;;;;;;;;;;;;[;;;;;;;;;;;;;;;;;;;;;;:;;;;;;;;;;;;;   
+;;;;;;;;;;;;;;;;;;;iiiiiiii;;;;;;;;;;;;;;};;ii;;iiii;;;;i;;;;;;;;;;;;;;;ii;;;   
+iiii;;;iiiiiiiiiiIIIIIIIIIIIiiiiiIiiiiii{iiIIiiiiiiiiiiiiiiii;;;;;iiiilliiiii   
+IIIiiIIllllllIIlllIIIIlllIIIlIiiIIIIIIIIIIIIlIIIIIllIIIIIIIIiiiiiiiillIIIllII   
+IIIiiilIIIIIIIllTIIIIllIIlIlIIITTTTlIlIlIIIlIITTTTTTTIIIIlIIllIlIlllIIIIIIITT   
+IIIIilIIIIITTTTTTTIIIIIIIIIIIIITTTTTIIIIIIIIITTTTTTTTTTIIIIIIIIIlIIIIIIIITTTT   
+IIIIIIIIITTTTTTTTTTTTTIIIIIIIITTTTTTTTIIIIIITTTTTTTTTTTTTTIIIIIIIIIIIIIITTTTT   
+
+You are in the desert.
+A stream winds north and mountains are visible on the southern horizon.
+What direction do you want to go? '''
+
+
 def house():
     return '''
                                 /\                                          
@@ -77,7 +108,7 @@ game = {
     'name': 'Hiking the AT',
     'frames': {
         'entry': {
-            'intro': 'A stream is to the north and mountains are on the horizon. What direction do you want to go? ',
+            'intro': horizon(),
             'actions': {
                 'open_door': {
                     'result': 'The door is locked'
