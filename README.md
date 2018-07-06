@@ -10,7 +10,7 @@ Each game will be an instance of the game engine initialzed with a game object '
 Create a new game:
 
 ```
-from rpg import Rpg
+from rpyg import Rpyg
 
 run_game = Rpg(**game)
 run_game.start()
@@ -140,6 +140,12 @@ From project root:
 
 ```
 python3 example/at.py
+```
+
+### Virtualenv
+
+```
+
 ```
 
 

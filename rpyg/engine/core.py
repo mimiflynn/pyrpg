@@ -1,7 +1,7 @@
-from rpg.cli import Cli
+from rpyg.cli import Cli
 
 
-class Rpg:
+class Rpyg:
     """
     Game engine encapsulated
     """
