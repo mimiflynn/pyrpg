@@ -82,6 +82,9 @@ class Rpyg:
                 return self.read_frame()
             else:
                 return self.do_action(response)
+        else:
+            self.output('Dunno what you mean by that, do you need help?')
+            return self.prompt(self.show_hint())
 
     def do_action(self, action_name):
         action = self.get_frame_action(action_name)
@@ -113,5 +116,5 @@ class Rpyg:
     def prompt(self, question):
         self.output(' ')
         self.output(question)
-        self.output(str(self.get_movement_options()))
+        # self.output(str(self.get_movement_options()))
         self.output(self.parse_response(str(input(''))))
