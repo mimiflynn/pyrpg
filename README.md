@@ -1,9 +1,9 @@
-# pyrpg
-Python port of console-game rpg engine
+# rpyg
+Python role playing game framework.
 
 ## Components
 
-Each game will be an instance of the game engine initialzed with a game object 'cartridge'.
+Each game will be an instance of the game class initialzed with a game object definition.
 
 ### Game Engine
 
