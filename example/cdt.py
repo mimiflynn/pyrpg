@@ -73,6 +73,7 @@ def mountains():
 You are in the mountains. There is a key at your feet.              '''
 
 
+# https://www.asciiart.eu/nature/deserts
 def desert():
     return '''
            ,                        '           .        '        ,     
@@ -91,6 +92,18 @@ def desert():
  ..,...  __/  -'/  `-._ `\_\__        | \           ||  _______   .     
                 '`  `\   \  \-.\        /(_1_,..      || /                
                                             ______/""""                 '''
+
+
+# https://www.asciiart.eu/miscellaneous/keys
+def key():
+    return '''
+  ooo,    .---.                 
+ o`  o   /    |\________________    
+o`   'oooo()  | ________   _   _)   
+`oo   o` \    |/        | | | |     
+  `ooo'   `---'         "-" |_|     
+                                    
+You have the key!                   '''
 
 
 def win():
@@ -169,7 +182,7 @@ game = {
                 'pick_up_key': {
                     'frame': 'mountains_no_key',
                     'item': 'key',
-                    'result': 'You have the key!'
+                    'result': key()
                 }
             },
             'moves': {
