@@ -1,11 +1,12 @@
-from rpyg.cli import output, ui
+import sys
+from rpyg.cli import cli_output, cli_ui
 
 
 class Rpyg:
     """
     Game engine encapsulated
     """
-    def __init__(self, output=output, ui=ui, **kwargs):
+    def __init__(self, output=cli_output, ui=cli_ui, **kwargs):
         """
         Construct the new game
 
@@ -47,7 +48,7 @@ class Rpyg:
         if 'end' in frame:
             self.output(frame.get('intro', ''))
             self.output('Game Over')
-            exit()
+            sys.exit()
         else:
             self.prompt(self.get_frame()['intro'])
 
@@ -76,7 +77,7 @@ class Rpyg:
         """
         frame = self.get_frame()
         if response == 'exit' or response == 'quit':
-            exit()
+            sys.exit()
         if response == 'hint' or response == 'help':
             return self.prompt(self.show_hint())
         if self.get_movement_options().count(response):

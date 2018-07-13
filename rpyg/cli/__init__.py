@@ -1,1 +1,1 @@
-from .core import output, ui
+from .core import cli_output, cli_ui

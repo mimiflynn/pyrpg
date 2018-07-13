@@ -1,6 +1,6 @@
-def output(text):
+def cli_output(text):
     print(text)
 
 
-def ui():
+def cli_ui():
     return input('=> ')
