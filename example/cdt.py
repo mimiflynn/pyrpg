@@ -50,7 +50,9 @@ def house():
 / ^ ^ ^  ^  ^  ^   ||||||||||||||||||||||||||||||oooooooooo| |ooooooo       
 ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo                   
 
-You are in front of a house! Where would you like to go?                    '''
+You are in front of a house! The door is locked [unlock_door]. To the       
+[south] are mountains and to the [north] is more house.                     
+What would you like to do?                                                  '''
 
 
 def mountains():
@@ -70,7 +72,9 @@ def mountains():
 `::::::8%@@%:::::@%&8:`.=~~-.~~-.~~=..~'8::::::::&@8:::::&8:::::'   
  `::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.'    
 
-You are in the mountains. There is a key at your feet.              '''
+You are in the mountains. There is a key at your feet [pick_up_key].
+To the [north] is a house to the [south] are more mountains.
+What would you like to do?                                          '''
 
 
 # https://www.asciiart.eu/nature/deserts
@@ -167,7 +171,7 @@ game = {
             }
         },
         'inside_house': {
-            'intro': 'You are inside the house!',
+            'intro': 'You are inside the house! [celebrate]',
             'actions': {
                 'celebrate': {
                     'frame': 'end',

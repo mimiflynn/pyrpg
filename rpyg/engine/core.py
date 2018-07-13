@@ -75,6 +75,8 @@ class Rpyg:
         :return:
         """
         frame = self.get_frame()
+        if response == 'exit' or response == 'quit':
+            exit()
         if response == 'hint' or response == 'help':
             return self.prompt(self.show_hint())
         if self.get_movement_options().count(response):

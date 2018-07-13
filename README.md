@@ -136,14 +136,18 @@ game = {
 ```
 
 ### Example Game
+
+#### CLI
 From project root for CLI version of game:
 ```
 python3 example/cdt.py
 ```
 
+#### Jupyter notebook
 From the `examples` directory run `jupyter-notebook` ([installation instructions](http://jupyter.org/install)) and open the example notebook `cdt-jupyter-notebook.ipynb`.
 
-### Tests
+
+### Tests (WIP)
 
 ```
 python -m unittest
