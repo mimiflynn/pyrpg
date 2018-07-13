@@ -106,9 +106,9 @@ class Rpyg:
             else:
                 self.output(' ')
                 self.output('------------------------ ')
-                self.output('Oh no! You are unable to ' + action_name + '.')
+                self.output('Oh no! You are unable to [' + action_name + '].')
                 self.output(' ')
-                self.output('You need the [' + action['required'] + '] to ' + action_name + '!')
+                self.output('You need the [' + action['required'] + '] to [' + action_name + ']!')
                 self.output(' ')
                 self.output('Find the [' + action['required'] + ']!')
                 self.output('------------------------ ')
