@@ -71,6 +71,9 @@ class Rpyg:
 
     def parse_response(self, response):
         """
+        Check response against possible options
+
+        Default options are exit, quit, hint, help.
 
         :param response:
         :return:
@@ -92,6 +95,12 @@ class Rpyg:
             return self.prompt(self.show_hint())
 
     def do_action(self, action_name):
+        """
+        Outputs corresponding action details
+
+        :param action_name:
+        :return:
+        """
         action = self.get_frame_action(action_name)
         if 'item' in action:
             self.add_inventory(action['item'])
@@ -121,12 +130,23 @@ class Rpyg:
         self.read_frame()
 
     def show_greeting(self):
+        """
+        Run once at the beginning of the game
+
+        :return: void
+        """
         self.output(' ------------------------ ')
         self.output('You are now playing ' + self.name)
         self.output(self.greeting)
         self.output(' ------------------------ ')
 
     def prompt(self, question):
+        """
+        outputs the prompt for user interaction
+
+        :param question:
+        :return:
+        """
         self.output(' ')
         self.output(question)
         self.output(self.parse_response(str(self.ui())))
