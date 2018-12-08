@@ -144,7 +144,7 @@ python3 example/cdt.py
 ```
 
 #### Jupyter notebook
-From the `examples` directory run `jupyter-notebook` ([installation instructions](http://jupyter.org/install)) and open the example notebook `cdt-jupyter-notebook.ipynb`.
+From the `examples` directory run `jupyter-notebook` ([installation instructions](http://jupyter.org/install)) and open the example notebook `cdt-jupyter-notebook.ipynb` or run it in [Google Colaboratory](https://colab.research.google.com/github/mimiflynn/rpyg/blob/master/example/cdt-jupyter-notebook.ipynb).
 
 
 ### Tests (WIP)
